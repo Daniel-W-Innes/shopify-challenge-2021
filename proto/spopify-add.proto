@@ -3,43 +3,40 @@ option go_package = "github.com/Daniel-W-Innes/shopify-add/proto";
 
 message Response {
   int32 transaction_id = 1;
-  bool successful = 2;
-}
-
-message ImageAtomic {
-  int32 width = 1;
-  int32 height = 2;
-  bytes image_data = 3;
+  string error = 2;
 }
 
 message ImageInfo {
-  repeated string tags = 1;
-  bool is_private = 2;
+  string name = 1;
+  repeated string tags = 2;
+  bool is_private = 3;
 }
 
 message Image{
   int32 transaction_id = 1;
-  ImageAtomic image = 2;
+  bytes image_data = 2;
   ImageInfo info = 3;
 }
 
 message ImageTile {
   int32 transaction_id = 1;
-  ImageAtomic image = 2;
+  bytes image_data = 2;
   int32 number = 3;
-  int32 num_x = 4;
-  int32 num_y = 5;
 }
 
 message ImageTileRegistration {
   int32 transaction_id = 1;
   ImageInfo info = 2;
+  int32 num_x = 3;
+  int32 num_y = 4;
 }
 
 
 service ShopifyAdd {
   rpc ImageAdd(Image) returns(Response){}
   rpc ImagesAdd(stream Image) returns(stream Response){}
+
+  rpc ImageRegisterTiles(ImageTileRegistration) returns (Response){}
+  rpc ImageRegisterTile(stream ImageTileRegistration) returns (stream Response){}
   rpc ImageAddTiles(stream ImageTile) returns (stream Response){}
-  rpc ImageRegisterTiles(stream ImageTileRegistration) returns (stream Response){}
 }
