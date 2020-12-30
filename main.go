@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/Daniel-W-Innes/shopify-add/controller"
-	"github.com/Daniel-W-Innes/shopify-add/proto"
+	"github.com/Daniel-W-Innes/shopify-challenge-2021/controller"
+	"github.com/Daniel-W-Innes/shopify-challenge-2021/proto"
 	"google.golang.org/grpc"
 	"log"
 	"net"

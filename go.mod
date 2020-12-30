@@ -1,4 +1,4 @@
-module github.com/Daniel-W-Innes/shopify-add
+module github.com/Daniel-W-Innes/shopify-challenge-2021
 
 go 1.15
 

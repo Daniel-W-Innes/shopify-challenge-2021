@@ -1,5 +1,5 @@
 syntax = "proto3";
-option go_package = "github.com/Daniel-W-Innes/shopify-add/proto";
+option go_package = "github.com/Daniel-W-Innes/shopify-challenge-2021/proto";
 
 message Response {
   int32 transaction_id = 1;

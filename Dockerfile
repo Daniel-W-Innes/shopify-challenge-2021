@@ -2,8 +2,8 @@
 
 FROM golang as build-env
 
-WORKDIR /go/src/github.com/Daniel-W-Innes/shopify-add
-ADD . /go/src/github.com/Daniel-W-Innes/shopify-add
+WORKDIR /go/src/github.com/Daniel-W-Innes/shopify-challenge-2021
+ADD . /go/src/github.com/Daniel-W-Innes/shopify-challenge-2021
 
 RUN go mod download &&\
     go mod verify &&\

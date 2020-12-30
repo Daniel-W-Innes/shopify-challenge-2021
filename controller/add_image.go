@@ -3,8 +3,8 @@ package controller
 import (
 	"bytes"
 	"fmt"
-	"github.com/Daniel-W-Innes/shopify-add/proto"
-	"github.com/Daniel-W-Innes/shopify-add/util"
+	"github.com/Daniel-W-Innes/shopify-challenge-2021/proto"
+	"github.com/Daniel-W-Innes/shopify-challenge-2021/util"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
